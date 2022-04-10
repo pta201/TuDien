@@ -1,0 +1,84 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap");
+
+* {
+    font-family: "Roboto", sans-serif;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #143f6b;
+    --color-secondary: #f55353;
+    --color-third: #feb139;
+    --color-forth: #f6f54d;
+}
+
+body {
+    background-color: var(--bs-gray-100);
+    max-width: 1080px;
+    margin: 0 auto !important;
+    float: none !important;
+    color: var(--color-secondary);
+}
+
+header .navbar {
+    background-color: var(--bs-gray-200);
+}
+
+#logo {
+    font-weight: bold;
+    color: var(--bs-gray-dark);
+    background-color: var(--bs-yellow);
+    padding: 0.5rem;
+    box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.input-list {
+    background-color: var(--color-primary);
+    padding: 0.5rem 2rem;
+}
+
+.input-label {
+    color: var(--color-forth);
+    font-size: 1.5rem;
+}
+
+.output-container h4 {
+    color: var(--bs-gray-900);
+}
+
+.output-list {
+    padding: 0;
+}
+
+.output-item {
+    background-color: var(--color-primary);
+    border-radius: 6px;
+}
+
+    .output-item .word-type {
+        width: fit-content;
+        padding: 0.5rem;
+        border-radius: 6px;
+        color: var(--bs-white);
+        background-color: var(--color-secondary);
+        font-weight: bold;
+    }
+
+    .output-item .word-meaning {
+        color: var(--color-forth);
+        font-size: 1.5rem;
+    }
+
+    .output-item h6 {
+        font-size: 1.25rem;
+        color: var(--color-forth);
+    }
+
+    .output-item .btn-submit {
+        background-color: var(--color-third);
+        color: var(--color-primary);
+        font-weight: bold;
+    }
