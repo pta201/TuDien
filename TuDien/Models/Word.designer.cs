@@ -90,7 +90,7 @@ namespace TuDien.Models
 		
 		private string _ThongTinThem;
 		
-		private string _DoKho;
+		private string _LoaiTu;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -106,8 +106,8 @@ namespace TuDien.Models
     partial void OnTiengVietChanged();
     partial void OnThongTinThemChanging(string value);
     partial void OnThongTinThemChanged();
-    partial void OnDoKhoChanging(string value);
-    partial void OnDoKhoChanged();
+    partial void OnLoaiTuChanging(string value);
+    partial void OnLoaiTuChanged();
     #endregion
 		
 		public TiengAnh_TiengViet()
@@ -115,13 +115,13 @@ namespace TuDien.Models
 			OnCreated();
 		}
 
-        public TiengAnh_TiengViet(DateTime? ngayThem, string tiengAnh, string tiengViet, string thongTinThem, string doKho)
+        public TiengAnh_TiengViet(DateTime? ngayThem, string tiengAnh, string tiengViet, string thongTinThem, string loaiTu)
         {
             NgayThem = ngayThem;
             TiengAnh = tiengAnh;
             TiengViet = tiengViet;
             ThongTinThem = thongTinThem;
-            DoKho = doKho;
+            LoaiTu = loaiTu;
         }
 
         [global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
@@ -224,22 +224,22 @@ namespace TuDien.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DoKho", DbType="NVarChar(50)")]
-		public string DoKho
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoaiTu", DbType="NVarChar(50)")]
+		public string LoaiTu
 		{
 			get
 			{
-				return this._DoKho;
+				return this._LoaiTu;
 			}
 			set
 			{
-				if ((this._DoKho != value))
+				if ((this._LoaiTu != value))
 				{
-					this.OnDoKhoChanging(value);
+					this.OnLoaiTuChanging(value);
 					this.SendPropertyChanging();
-					this._DoKho = value;
-					this.SendPropertyChanged("DoKho");
-					this.OnDoKhoChanged();
+					this._LoaiTu = value;
+					this.SendPropertyChanged("LoaiTu");
+					this.OnLoaiTuChanged();
 				}
 			}
 		}

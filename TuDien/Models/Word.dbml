@@ -7,7 +7,7 @@
       <Column Name="TiengAnh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="TiengViet" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="ThongTinThem" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DoKho" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LoaiTu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

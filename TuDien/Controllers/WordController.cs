@@ -19,7 +19,7 @@ namespace TuDien.Controllers
             var words = db.TiengAnh_TiengViets.ToList();
             foreach(var word in words)
             {
-                wordList.Add(new TiengAnh_TiengViet(word.NgayThem, word.TiengAnh, word.TiengViet, word.ThongTinThem, word.DoKho ));
+                wordList.Add(new TiengAnh_TiengViet(word.NgayThem, word.TiengAnh, word.TiengViet, word.ThongTinThem, word.LoaiTu ));
             }
             return wordList;
         }
@@ -37,7 +37,7 @@ namespace TuDien.Controllers
             return word;
         }
         [HttpPost]
-        public bool addWord(DateTime ngayThem, string tiengAnh, string tiengViet, string thongTinThem, string doKho)
+        public bool addWord(DateTime ngayThem, string tiengAnh, string tiengViet, string thongTinThem, string loaiTu)
         {
             try
             {
@@ -46,7 +46,7 @@ namespace TuDien.Controllers
                 word.TiengAnh = tiengAnh;
                 word.TiengViet = tiengViet;
                 word.ThongTinThem = thongTinThem;
-                word.DoKho = doKho;
+                word.LoaiTu = loaiTu;
                 db.TiengAnh_TiengViets.InsertOnSubmit(word);
                 db.SubmitChanges();
                 return true;
@@ -57,7 +57,7 @@ namespace TuDien.Controllers
             }
         }
         [HttpPut]
-        public bool updateWord(int id, DateTime ngayThem, string tiengAnh, string tiengViet, string thongTinThem, string doKho)
+        public bool updateWord(int id, DateTime ngayThem, string tiengAnh, string tiengViet, string thongTinThem, string loaiTu)
         {
             try
             {
@@ -66,7 +66,7 @@ namespace TuDien.Controllers
                 word.TiengAnh = tiengAnh;
                 word.TiengViet = tiengViet;
                 word.ThongTinThem = thongTinThem;
-                word.DoKho = doKho;
+                word.LoaiTu = loaiTu;
                 db.SubmitChanges();
                 return true;
             }
