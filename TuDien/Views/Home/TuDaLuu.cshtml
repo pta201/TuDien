@@ -1,22 +1,24 @@
 ﻿
 @{
-    ViewBag.Title = "Từ điển";
+    ViewBag.Title = "Danh sách từ đã lưu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 
 <section class="input-section">
     <div class="form-container container">
         <form action="" onsubmit="event.preventDefault();">
             <ul class="input-list d-flex">
                 <li class="input-item mx-2">
-                    <label for="tiengAnhTxt" class="input-label">Tiếng Anh:</label>
+                    <label for="searchTxt" class="input-label">Nhập từ cần tìm kiếm:</label>
                     <input type="text"
-                           name="TiengAnh"
-                           id="tiengAnhTxt"
-                           placeholder="Nhập từ cần tra"
+                           name="search"
+                           id="searchTxt"
+                           placeholder="Nhập từ cần tìm"
                            class="px-2 py-1" />
                 </li>
                 <li class="input-item mx-2">
-                    <button class="btn btn-primary" id="btn-search">Dịch</button>
+                    <button class="btn btn-primary" id="btn-search">Tìm</button>
                 </li>
             </ul>
         </form>
@@ -24,12 +26,13 @@
 </section>
 <section class="output-section">
     <div class="container output-container">
-        <h4>Kết quả:</h4>
+        <h4>Các từ đã lưu:</h4>
         <ul class="output-list">
         </ul>
     </div>
 </section>
-@section Scripts
-{
-    <script src="~/Scripts/translate.js"></script>
+
+@section Scripts{
+
+    <script src="~/Scripts/script.js"></script>
 }

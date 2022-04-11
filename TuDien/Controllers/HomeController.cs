@@ -14,5 +14,10 @@ namespace TuDien.Controllers
 
             return View();
         }
+        public ActionResult TuDaLuu()
+        {
+            ViewBag.Title = "Danh sách từ đã lưu";
+            return View();
+        }
     }
 }

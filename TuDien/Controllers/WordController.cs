@@ -12,30 +12,29 @@ namespace TuDien.Controllers
     {
         WordDataContext db = new WordDataContext();
         //Get all
+        [AllowCrossSiteJson]
         [HttpGet]
         public List<TiengAnh_TiengViet> getAll()
         {
             List<TiengAnh_TiengViet> wordList = new List<TiengAnh_TiengViet>();
             var words = db.TiengAnh_TiengViets.ToList();
-            foreach(var word in words)
-            {
-                wordList.Add(new TiengAnh_TiengViet(word.NgayThem, word.TiengAnh, word.TiengViet, word.ThongTinThem, word.LoaiTu ));
-            }
-            return wordList;
+            return words;
         }
+        [AllowCrossSiteJson]
         [HttpGet]
         public TiengAnh_TiengViet getByID(int id)
         {
             TiengAnh_TiengViet word = db.TiengAnh_TiengViets.SingleOrDefault(n => n.id == id);
             return word;
         }
-        [HttpPost]
+        [AllowCrossSiteJson]
         [HttpGet]
         public TiengAnh_TiengViet getByEnglish(string tiengAnh)
         {
             TiengAnh_TiengViet word = db.TiengAnh_TiengViets.SingleOrDefault(n => n.TiengAnh == tiengAnh);
             return word;
         }
+        [AllowCrossSiteJson]
         [HttpPost]
         public bool addWord(DateTime ngayThem, string tiengAnh, string tiengViet, string thongTinThem, string loaiTu)
         {
@@ -56,6 +55,7 @@ namespace TuDien.Controllers
                 return false;
             }
         }
+        [AllowCrossSiteJson]
         [HttpPut]
         public bool updateWord(int id, DateTime ngayThem, string tiengAnh, string tiengViet, string thongTinThem, string loaiTu)
         {
@@ -67,6 +67,22 @@ namespace TuDien.Controllers
                 word.TiengViet = tiengViet;
                 word.ThongTinThem = thongTinThem;
                 word.LoaiTu = loaiTu;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        [AllowCrossSiteJson]
+        [HttpDelete]
+        public bool deleteWord(int id)
+        {
+            try
+            {
+                TiengAnh_TiengViet word = db.TiengAnh_TiengViets.SingleOrDefault(n => n.id == id);
+                db.TiengAnh_TiengViets.DeleteOnSubmit(word);
                 db.SubmitChanges();
                 return true;
             }
